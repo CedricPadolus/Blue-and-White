@@ -23,6 +23,18 @@ body {
 	font-family: 'Roboto', serif;
 	color:black;
 }
+@media screen and (max-width: 320px) {
+body {
+	margin-left:auto;
+	margin-right:auto;
+	background-repeat:repeat; 
+	width: 320px;
+	margin-top:0;
+	font-size: 1rem;
+	font-family: 'Roboto', serif;
+	color:black;
+}
+}
 img.aligncenter,img[align=center]{display:block;}
 .aligncenter{display:block;margin-left:auto;margin-right:auto;margin-bottom:10px;}
 .entry-content img{max-width:100%;height:auto;padding:2px;}
@@ -69,6 +81,12 @@ img {
 	float:left;
 	background-color: white;
 }
+@media screen and (max-width: 320px) {
+#container {
+width:100%;
+float:left;
+  }
+}
 #header {
 	width:100%;
 	height:160px;
@@ -113,48 +131,141 @@ background:#0099ff;
 text-align: center;
 color:white;
 }
-
+@media screen and (max-width: 320px) {
+nav {
+width:100%;
+height:auto;
+float:left;
+border-bottom: 1px solid white;
+border-top: 1px solid white;
+background:#0099ff;
+color:white;
+}
+}
 nav ul {
 margin-right:auto;
 margin-left:auto;
 
 }
-
+@media screen and (max-width: 320px) {
+nav ul {
+float:left;
+width:100%;
+margin:0;
+padding:10px;
+}
+}
 nav li {
 list-style-type:none;
 display:inline-block;
 margin-bottom:10px;
-font-size:1rem;
 color:#fff;
 }
-
+@media screen and (max-width: 320px) {
+nav li {
+float:left;
+list-style-type:none;
+display:inline-block;
+margin-bottom:10px;
+color:#fff;
+}
+}
 nav ul li a {
 color:white;
 text-decoration:none;
 padding-right:auto;
-font-size: 1.4rem;
 text-align: center;
 margin:8px;
 padding:4px;
 }
-
-nav ul li a:hover {
-	color:white!important;
-	text-decoration: underline;
+@media screen and (max-width: 320px) {
+nav ul {
+float:left;
 }
-
-
+}
+nav ul li a {
+color:white;
+text-decoration:none;
+padding-right:auto;
+margin:8px;
+padding:4px;
+}
 
 #search {
 float:right;
 margin:16px 40px 0 10px;
 }
+@media screen and (max-width: 320px) {
+#search {
+float:right;
+margin:8px 20px 0 10px;
+}
+}
+.search-form {
+	float:right;
+	border:0;
+}
 
+.search-field {
+	background-color: transparent;
+	background-image: url("img/search-icon.png");
+	background-position: 5px center;
+	background-repeat: no-repeat;
+	background-size: 32px 32px;
+	cursor: pointer;
+	height: 48px;
+	margin: 0;
+	padding: 0 0 0 34px;
+	position: relative;
+	-webkit-transition:width 400ms ease, background 400ms ease;
+	transition:width 400ms ease, background 400ms ease;
+	width: 38px;
+	border:0;
+	outline: 0;
+}
+.search-field input{
+	border:0;
+	outline: 0;
+	}
+
+.search-field:hover {
+	background-color: #fff;
+	border: 2px solid #c3c0ab;
+	cursor: text;
+	outline: 0!important;
+	width: 230px;
+	border:0;
+}
+.search-form
+.search-submit { 
+display:none;
+border:0;
+}
+.no-results {
+	float:left;
+	width:98%;
+	margin:2px;
+	padding:4px;
+}
+.no-results p{
+	float:left;
+	margin:2px;
+	padding:4px;
+}
 #content {
 width:100%;
 float:left;
 height:auto;
 margin:20px 0 10px 0;
+}
+@media screen and (max-width: 320px) {
+#content {
+width:94%;
+float:left;
+height:auto;
+margin:0;
+padding:0;
+}
 }
 
 #post-content {
@@ -179,7 +290,15 @@ margin:20px 0 10px 0;
 	margin:4px;
 	padding:4px;
 }
-
+@media screen and (max-width: 320px) {
+.post-block {
+	width:100%;
+	float:left;
+	border:1px solid lightgrey;
+	margin:4px;
+	padding:4px;
+}
+}
 #meta, #meta a {
 	width:100%;
 	float:left;
@@ -188,8 +307,6 @@ margin:20px 0 10px 0;
 	margin:0;
 	color:black!important;
 }
-
-
 #post-block-title {
 	width:100%;
 	float:left;
@@ -209,17 +326,43 @@ margin:20px 0 10px 0;
 	padding:0;
 	margin:0;
 }
-
 #postblock-thumb {
 	width:50%;
 	float:left;
+}
+@media screen and (max-width: 320px) {
+#postblock-thumb {
+	width:100%;
+	float:left;
+}
+}
+@media screen and (max-width: 480px) {
+#postblock-thumb {
+	width:100%;
+	float:left;
+}
 }
 #post-text {
 	width:40%;
 	float:left;
 	margin:4px;
 	padding:4px;
-
+}
+@media screen and (max-width: 320px) {
+#post-text {
+	width:98%;
+	float:left;
+	margin:4px;
+	padding:4px;
+}
+}
+@media screen and (max-width: 480px) {
+#post-text {
+	width:98%;
+	float:left;
+	margin:4px;
+	padding:4px;
+}
 }
 #postblock-content {
 	width:100%;
@@ -229,17 +372,37 @@ margin:20px 0 10px 0;
 	float:right;
 	width:auto;
 	height:auto;
-	font-size: 1.4rem;
+	font-size: 1.8rem;
 	color:lightgrey!important;
+}
+@media screen and (max-width: 320px) {
+#more a,#more {
+	float:left;
+	width:auto;
+	height:auto;
+	font-size: 1.8rem;
+	color:lightgrey!important;
+}
 }
  #more a:hover{
 	float:right;
 	width:auto;
 	height:auto;
-	font-size: 1.4rem;
+	font-size: 1.8rem;
 	color:grey!important;
 	animation: rotate 1s;
 	-webkit-animation: rotate 1s;
+}
+@media screen and (max-width: 320px) {
+#more a:hover{
+	float:right;
+	width:auto;
+	height:auto;
+	font-size: 1.8rem;
+	color:grey!important;
+	animation: rotate 1s;
+	-webkit-animation: rotate 1s;
+}
 }
 @keyframes rotate
 {

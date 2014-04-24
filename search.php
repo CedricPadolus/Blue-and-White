@@ -1,39 +1,24 @@
-<?php get_header() ?>
-
-		<div id="content">
-
-			<h2 class="tag-page-title"><?php _e( 'R&eacute;sultats pour:' ) ?> <span><?php the_search_query() ?></span></h2>
-
-<?php if ( have_posts() ) : ?>
-
-<?php while ( have_posts() ) : the_post() ?>
-
-
-<div id="post-content">
-<div id="meta"><?php echo 'Il y a ' .human_time_diff(get_the_time('U'), current_time('timestamp')); ?> | <a href="<?php comments_link(); ?>"><?php comments_number( 'Soyez le premier à commenter', '1 réaction', '% réactions' ); ?></a></div>
-<div id="post-block-title"><a href="<?php the_permalink(); ?>"/><?php the_title ();?></a></div>
-	<div id="postblock-content"><?php the_excerpt("Continue reading " . the_title('', '', false)); ?></div>	
-</div>						
+<?php get_header(); ?>
+<div id="content">
+				<h2 class="tag-page-title"><?php _e( 'R&eacute;sultats pour:' ) ?> <span><?php the_search_query() ?></span></h2>
+	<?php if(have_posts()) : ?><?php while(have_posts()) : the_post(); ?>
+	<div class="post-block">
+	<div id="post-content" <?php post_class(); ?>>
+<div id="postblock-thumb"><a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('post-thumbnail'); ?></a></div>
+<div id="post-text">
+<div id="meta"><?php the_category(', '); ?></div>
+<div id="post-block-title"><a href="<?php the_permalink(); ?>"/><h2><?php the_title ();?></h2></a></div>
+<div id="postblock-content" ><?php the_excerpt(); ?></a></div>
+<div id="more"><a href="<?php the_permalink(); ?>" alt="Lire la suite de cet article" title="Lire la suite de cet article"/>+</a></div>
+</div><!-- #post-text -->
+</div> <!-- #post-content -->
+</div>
 <?php endwhile; ?>
-
 <?php else : ?>
-
-			<div class="entry post no-results not-found">
-				<h3 class="entry-title"><?php _e( 'Aucun resultat' ) ?></h3>
-				<div class="entry-content">
-					<p><?php _e( 'Aucun resultat. Merci de renouveller votre recherche.' ) ?></p>
-				
-				</div>
-			</div><!-- .post -->
-
-<?php endif; ?>
-
-			<div class="navigation clearfix">
-				<div class="nav-previous"><?php next_posts_link(__( 'Anciens <span class="meta-nav">Articles</span>', 'wpbx' )) ?></div>
-				<div class="nav-next"><?php previous_posts_link(__( 'Suivants <span class="meta-nav">Articles</span>', 'wpbx' )) ?></div>
-			</div>
-
-
-		</div><!-- #content -->
-
-<?php get_footer() ?>
+<div class="no-results">
+<p><?php _e( 'Aucun resultat. Merci de renouveller votre recherche.' ) ?></p>
+</div>
+<?php endif; ?>  
+<div id="navigation"><?php posts_nav_link('&#8734;','Articles récents','Articles anciens'); ?></div>
+</div> <!-- Ends content -->
+<?php get_footer(); ?>

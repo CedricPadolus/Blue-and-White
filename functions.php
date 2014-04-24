@@ -5,6 +5,8 @@ set_post_thumbnail_size(520, 200, true); // Normal post thumbnails
 // Prise en charge recherche HTML5
 add_theme_support('html5', array('search'));
 
+// Prise en charge recherche HTML5
+add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption'  ) );
 
 // Enable widgetable sidebar
 // You may need to tweak your theme files, more info here - http://codex.wordpress.org/Widgetizing_Themes
